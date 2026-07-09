@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GIS Ops Stack — M365 Toolkit for Municipal GIS Teams</title>
+<meta name="description" content="A turnkey Microsoft 365 toolkit for municipal GIS teams: OneNote knowledge base, PowerApps project tracking, and Teams-integrated dashboards." />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #182A3A;
+    background: #ffffff;
+    line-height: 1.5;
+  }
+  .header {
+    background: #182A3A;
+    padding: 60px 24px 46px;
+    position: relative;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: #2A9D8F;
+  }
+  .header-inner { max-width: 760px; margin: 0 auto; padding-left: 18px; }
+  h1 {
+    color: #ffffff;
+    font-size: 2.4rem;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+  .subtitle { color: #2A9D8F; font-size: 1.15rem; margin: 0 0 14px 0; }
+  .credibility { color: #B9C4CC; font-size: 0.9rem; margin: 0; }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 24px; }
+
+  .hook {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #182A3A;
+    border-left: 3px solid #2A9D8F;
+    padding-left: 16px;
+    margin: 0 0 40px 0;
+  }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+  h2 {
+    font-size: 1.15rem;
+    color: #182A3A;
+    border-bottom: 2px solid #2A9D8F;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+  ul { padding-left: 18px; margin: 0; }
+  li { margin-bottom: 10px; font-size: 0.95rem; color: #182A3A; }
+  li::marker { color: #2A9D8F; }
+
+  .proof {
+    background: #F4F6F7;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .proof strong { color: #2A9D8F; font-size: 0.85rem; letter-spacing: 0.5px; }
+  .proof p { margin: 6px 0 0 0; font-size: 0.92rem; }
+
+  .pricing {
+    background: #182A3A;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 22px 24px;
+    margin-bottom: 46px;
+  }
+  .pricing h3 { margin: 0 0 6px 0; font-size: 1.05rem; }
+  .pricing p { margin: 0; color: #B9C4CC; font-size: 0.88rem; }
+
+  /* --- lead form --- */
+  .form-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #F4F6F7;
+    padding: 28px;
+    border-radius: 8px;
+    border: 1px solid #E0E4E7;
+  }
+  .form-wrap h3 { margin: 0 0 6px 0; color: #182A3A; font-size: 19px; border: none; padding: 0; }
+  .form-wrap p.desc { margin: 0 0 18px 0; color: #5B6470; font-size: 13.5px; }
+  label { display: block; font-size: 12.5px; color: #5B6470; margin-bottom: 4px; }
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #C7CDD2;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #2A9D8F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover { background: #23897c; }
+  [data-fs-success], [data-fs-error] { display: none; margin-bottom: 12px; padding: 10px 12px; border-radius: 5px; font-size: 13.5px; }
+  [data-fs-success] { background: #E4F5F2; color: #1B5E56; }
+  [data-fs-error] { background: #FBEAEA; color: #8A2A2A; }
+  [data-fs-error="name"], [data-fs-error="email"] { color: #B4534A; font-size: 12px; margin-top: -8px; margin-bottom: 8px; padding: 0; background: none; }
+
+  footer { text-align: center; padding: 30px 24px 50px; color: #5B6470; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>GIS OPS STACK</h1>
+    <p class="subtitle">A Turnkey Microsoft 365 Toolkit for Municipal GIS Teams</p>
+    <p class="credibility">Built by a practicing municipal GIS Program Manager — running in production, not a concept.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="hook">If your GIS knowledge lives in someone's inbox, your project tracking is a spreadsheet, and onboarding a new hire takes a week of "ask around" — this fixes that.</p>
+
+  <div class="grid">
+    <div>
+      <h2>The Problem</h2>
+      <ul>
+        <li>GIS documentation scattered across inboxes, personal drives, and inconsistent folder structures</li>
+        <li>No way to separate short/long-term project work from SLA-bound helpdesk tickets</li>
+        <li>New staff onboarding takes days because "tribal knowledge" isn't written down anywhere findable</li>
+        <li>Low visibility across departments into what GIS layers, apps, and maps already exist</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Who It's For</h2>
+      <ul>
+        <li>Municipal or county GIS managers on Microsoft 365 + ArcGIS Enterprise who want a professional internal ops system — without hiring a developer or buying another SaaS tool.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>What's Included</h2>
+  <ul style="margin-bottom: 36px;">
+    <li>OneNote Knowledge Base template — 4-notebook structure (Applications, Divisions, Layers, Outside Agency)</li>
+    <li>GIS Projects & Tasks Tracker — PowerApps + SharePoint Lists with Power Automate auto-archiving</li>
+    <li>GIS Applications Hub & Dashboard — staff-facing PowerApp embedded directly in Teams</li>
+    <li>Layer Catalog App — one-click links from layer list to live Map Viewer, org-wide</li>
+    <li>Web App Showcase template — searchable archive of past helpdesk-built solutions</li>
+    <li>Setup & configuration walkthrough for replicating the stack in your org</li>
+  </ul>
+
+  <div class="proof">
+    <strong>PROVEN IN PRODUCTION</strong>
+    <p>3+ years in daily use — scaled from a single GIS team to org-wide access for 1,000+ city staff.</p>
+  </div>
+
+  <div class="pricing">
+    <h3>Toolkit License</h3>
+    <p>Templates + configuration guide + 1-hour setup walkthrough call. Ask about pricing — scoped to your org size.</p>
+  </div>
+
+  <div class="form-wrap">
+    <h3>Get Early Access</h3>
+    <p class="desc">GIS Ops Stack launches soon. Drop your email to get pricing, launch date, and a demo walkthrough.</p>
+
+    <div data-fs-success></div>
+    <div data-fs-error></div>
+
+    <form id="gis-ops-stack-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" data-fs-field required />
+      <span data-fs-error="name"></span>
+
+      <label for="email">Work email</label>
+      <input type="email" id="email" name="email" data-fs-field required />
+      <span data-fs-error="email"></span>
+
+      <label for="organization">City / County / Agency</label>
+      <input type="text" id="organization" name="organization" data-fs-field />
+
+      <button type="submit" data-fs-submit-btn>Notify Me</button>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  James Crandall — GIS Program Manager, California — building GIS Ops Stack independently<br>
+  <a href="https://www.linkedin.com/in/james-crandall-87489110/" style="color:#2A9D8F;">linkedin.com/in/james-crandall-87489110</a>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#gis-ops-stack-form', formId: 'xnjkeagb' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
